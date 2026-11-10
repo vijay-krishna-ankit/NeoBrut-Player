@@ -1,0 +1,9 @@
+plugins {
+    id 'com.android.application' version '9.5.1' apply false
+}
+
+tasks.register('lint-fix') {
+    group = 'verification'
+    description = 'Apply Android lint fixes where available.'
+    dependsOn ':app:lintFix'
+}

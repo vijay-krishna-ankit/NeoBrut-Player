@@ -46,3 +46,17 @@ NeoBrut Player is free and open-source software licensed under the **GNU General
 You are free to use, study, modify, and redistribute the project, including creating forks. Distributed modified versions must remain under the GPL and provide the corresponding source code under the license terms.
 
 See the [LICENSE](LICENSE) file for the complete license text.
+
+## Getting started
+
+Open this folder in Android Studio and let Gradle sync. Install Android SDK Platform 37 when prompted, then run the `app` configuration on an emulator or Android device (Android 6.0 or newer).
+
+The app is written in Kotlin and uses the Gradle wrapper. The checked-in Gradle daemon configuration requires JDK 25, which is bundled with the current Android Studio. Android Studio's bundled JDK can be selected under **Settings > Build, Execution, Deployment > Build Tools > Gradle**. For a terminal or VS Code, set `JAVA_HOME` to a compatible JDK installation and configure `ANDROID_HOME` to point to the Android SDK. Install the recommended VS Code extensions for Kotlin and Gradle support.
+
+Build from the project root with `gradlew.bat assembleDebug` on Windows or `./gradlew assembleDebug` on macOS/Linux. The debug APK is generated at `app/build/outputs/apk/debug/app-debug.apk`. You can also use Android Studio to manage the SDK, emulator, and device deployment while editing in VS Code.
+
+The welcome screen is an initial placeholder; music scanning and playback are not implemented yet.
+
+## Lint
+
+Run `gradlew.bat lint-fix` on Windows or `./gradlew lint-fix` on macOS/Linux to apply available automatic Android lint fixes. Review the resulting changes; lint cannot fix every issue automatically. Run `gradlew.bat lintDebug` or `./gradlew lintDebug` to check the debug build without applying fixes.
